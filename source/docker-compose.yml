@@ -1,8 +1,20 @@
 version: '3'
 
 services:
-  app:
+  app-dev:
+    profiles:
+      - "dev"
     build: 
       dockerfile: Dockerfile
+    volumes:
+      - .:/home/node/app
+
+  app-test:
+    profiles:
+      - "test"
+    build: 
+      dockerfile: Dockerfile
+    command: >
+      npm rum test
     volumes:
       - .:/home/node/app
