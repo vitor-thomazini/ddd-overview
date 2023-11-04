@@ -1,4 +1,6 @@
-export class OrderItem {
+import { OrderItemInterface } from "./order-item.interface";
+
+export class OrderItem implements OrderItemInterface {
   private _id: string;
   private _productId: string;
   private _name: string;
